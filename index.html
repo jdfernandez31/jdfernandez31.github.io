@@ -81,7 +81,6 @@
   <!--WOW JS-->
   <script src="js/wow.min.js"></script>
   <script>
-    new WOW().init();
 
   //NAVBAR SCROLLING
   $(function () {
@@ -106,6 +105,7 @@
 
 <div id="loader">
     <div class="loader-inner ball-pulse-sync">
+          <div></div>
           <div></div>
           <div></div>      
     </div>
@@ -642,6 +642,7 @@
 
     function showPage() {
       document.getElementById("loader").style.display = "none";
+      new WOW().init(); //WOW.js is disabled under influence of page loader, putting it here with the loader js fixes the issue.
       $('#loaderContainer').removeAttr('id'); //THIS IS NEEDED SO THAT AFTER LOADER, THE PAGE CSS IS STILL IN TACKED NOT IN BLOCK DISPLAY
     }
 
