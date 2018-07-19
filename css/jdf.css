@@ -9,7 +9,7 @@ background - #01485a
 */
    
 html {
-  background: white; /*WEIRD BUG: Chrome does not recognized mix-blend-mode css, this is the fix*/
+  background: #0b2654; /*WEIRD BUG: Chrome does not recognized mix-blend-mode css, this is the fix*/
 }
 
 #bgOverlay {
