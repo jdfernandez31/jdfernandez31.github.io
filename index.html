@@ -50,6 +50,22 @@
 		                        #842b5d 100%);
 		  border-radius: 10px;
 		}
+
+    /*FOR LOADER*/
+    #loader{  /*CENTER LOADER*/
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 99999;
+    }
+    .loader-inner div{
+      background-color: #ffa800;
+    }
+
+    #loaderContainer {
+      display: none;
+      text-align: center;
+    }
 	</style>
 
   <!-- Boostrap JS -->
@@ -86,7 +102,16 @@
   </script>
 
 </head>
-<body>
+<body onload="myLoader()">
+
+<div id="loader">
+    <div class="loader-inner ball-zig-zag-deflect">
+          <div></div>
+          <div></div>      
+    </div>
+</div>
+
+<div id="loaderContainer">
   <img id="bgOverlay" src="img/overlay.png">
   <a href="#" class="back-to-top animated zoomIn" title="Back To Top">Back To Top</a>
   <a href="#" class="scroll-down" address="true" title="Start Browsing"></a>
@@ -593,6 +618,7 @@
   </div>
 </div>
 
+</div> <!--LOADER END-->
 
 </body>
 
@@ -607,6 +633,18 @@
   <script src="js/back-to-top.js"></script>
 
   <script type="text/javascript">
+    //Loader
+    var myVar;
+
+    function myLoader() {
+        myVar = setTimeout(showPage, 2000);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      $('#loaderContainer').removeAttr('id'); //THIS IS NEEDED SO THAT AFTER LOADER, THE PAGE CSS IS STILL IN TACKED NOT IN BLOCK DISPLAY
+    }
+
     //Back to Top Button
     $('body').prepend('<a href="#" class="back-to-top">Back to Top</a>');
 
